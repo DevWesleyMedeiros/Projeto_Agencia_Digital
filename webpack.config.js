@@ -3,15 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/js/index.js',
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
     },
-    module: { // Módulo para as regras
+    module: {
         rules: [
             {
-                test: /\.(sa|sc|c)ss$/, // Corrigindo o teste para arquivos de estilo
+                test: /\.(sa|sc|c)ss$/, 
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -21,7 +22,7 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                    MiniCssExtractPlugin.loader, // Use MiniCssExtractPlugin para CSS também
+                    MiniCssExtractPlugin.loader, 
                     'css-loader'
                 ]
             },
@@ -36,17 +37,17 @@ module.exports = {
                 }
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/i, // Teste para fontes
-                type: 'asset/resource', // Usando asset/resource
+                test: /\.(woff|woff2|eot|ttf|otf)$/i, 
+                type: 'asset/resource',
                 generator: {
-                    filename: 'fonts/[name][ext]' // Diretório de saída das fontes
+                    filename: 'fonts/[name][ext]'
                 }
             },
             {
-                test: /\.(png|jpg|jpeg|gif|svg)$/i, // Teste para arquivos de imagem
-                type: 'asset/resource', // Usando asset/resource
+                test: /\.(png|jpg|jpeg|gif|svg)$/i, 
+                type: 'asset/resource', 
                 generator: {
-                    filename: 'images/[name][ext]' // Diretório de saída das imagens
+                    filename: 'images/[name][ext]'
                 }
             }
         ]
@@ -61,9 +62,10 @@ module.exports = {
         })
     ],
     devServer: {
-        contentBase: path.join(__dirname, 'dist'), // Local onde os arquivos estão servidos
-        compress: true, // Ativa a compressão
-        port: 9000, // Porta do servidor
-        open: true, // Abre o navegador automaticamente
-    },
+        static: path.resolve(__dirname, 'dist'),
+        compress: true,
+        port: 9000,
+        hot: true, 
+        open: true,
+    }
 };
