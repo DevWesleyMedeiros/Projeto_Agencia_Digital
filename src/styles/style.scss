@@ -4,18 +4,89 @@
 @tailwind components;
 @tailwind utilities;
 
+$button-enviar: #ff5f27;
+$default-color: #fff;
+$debug-element-color1: red;
+$debug-element-color2: blue;
+$debug-element-border: 1px solid #000;
+
+// classes avulsas
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../assets/fonts/fontawesome-webfont.ttf") format('truetype');
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
 }
+
 html, body{
     height: 100%;
 }
-.test{
-    background-color: red;
-    h1{
-        font-size: larger;
+header{
+    background-image: url("../assets/images/bg.jpg");
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    border: $debug-element-border;
+
+
+    .header-container{
+        display:flex;
+        flex-direction: column;
+
+        .top-menu{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $debug-element-color1;
+
+            .logo-agencia{
+                margin-left: 2%;
+                background-image: url("../assets/images/logo.png");
+                width: 132px;
+                height: 20px;
+            }
+            .nav-bar{
+                padding-right: 2%;
+                ul{
+                    li{
+                        display: inline-block;
+                        margin: 0.5rem;
+                    }
+                }
+            }
+        }
+        .form-banner{
+            display: flex;
+            flex-direction: column;
+            background-color: $debug-element-color2;
+
+            h2{
+                font-size: 47px;
+                color: $default-color;
+            }
+            p{
+                color: $default-color;
+                max-width: 600px;
+                font-size: 17px;
+                margin-top: 17px;
+            }
+            form{
+                width: 800px;
+                border: $debug-element-border;
+            }
+            input[type=email]{
+                max-width: 400px;
+            }
+            
+        }
     }
 }

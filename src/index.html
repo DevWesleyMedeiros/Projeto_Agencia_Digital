@@ -6,12 +6,56 @@
   <title>Projeto 10 Agência digital</title>
 </head>
 <body>
-  <div class="test">
-    <h1>Olá, mundo!</h1>
-    <button class="btn btn-primary">Primary button</button>
-    <i class="fas fa-user"></i>
-    <i class="fab fa-github"></i>
-    <h1 class="text-3xl font-bold">Hello, Tailwind CSS!</h1>
+  <header>
+    <div class="header-container">
+        <div class="top-menu">
+            <div class="logo-agencia">
+                <!-- logo da agência -->
+            </div>
+            <div class="nav-bar">
+                <ul>
+                    <li class="links"><a href="#">Sobre</a></li>
+                    <li class="links"><a href="#">Serviços</a></li>
+                    <li class="links"><a href="#">Contatos</a></li>
+                    <li class="links"><a href="#">Quero um orçamento</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-banner">
+            <h2>Você vendendo mais com automações web</h2>
+            <p>
+                Nós criamos as soluções de Markiting para sua empresa vender mais, da melhor forma
+            </p>
+            <form action="#">
+                <div
+                class="shadow-lg flex gap-2 items-center bg-white p-2 hover:shadow-xl duration-300 hover:border-2 border-gray-400 group delay-200 rounded-md"
+                >
+                <svg
+                    class="group-hover:rotate-[360deg] duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    height="1em"
+                    width="1em"
+                >
+                    <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <path d="M22 6l-10 7L2 6"></path>
+                </svg>
+                <input
+                    type="email"
+                    name="text"
+                    class="flex-1 focus:outline-none"
+                    placeholder="Seu melhor Email ..."
+                />
+                </div>
+
+                <input type="submit" name="acao" value="Quero saber mais">
+            </form>
+        </div>
+    </div>
+  </header>
   </div>
 </body>
 </html>
