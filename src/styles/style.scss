@@ -1,3 +1,9 @@
+@import "~bootstrap/scss/bootstrap";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
     margin: 0;
     padding: 0;
