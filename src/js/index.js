@@ -1,6 +1,7 @@
 import '../styles/style.scss';
 import '@fortawesome/fontawesome-free/js/all.js';
 import * as bootstrap from 'bootstrap';
+import $ from 'jquery';
 
 import imageMockup1 from '../assets/images/mockup1.jpg';
 let imgTag = document.querySelector(".mockup1");
@@ -31,5 +32,11 @@ const logosEmpresasParceiras = [...document.querySelectorAll(".logo-empresas-cli
 
 for (let i = 0; i < arrayLogoParceiros.length; i++) {
     logosEmpresasParceiras[i].src = arrayLogoParceiros[i];
-    
 }
+//Script Menu Toggle
+document.addEventListener("DOMContentLoaded", () => {
+    $('.nav-mobile > .Humburguer_icon').click(function(e) {
+        e.preventDefault();
+        $('.nav-mobile').parent().find('ul').toggle(1000); 
+    });
+});

@@ -1,6 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import './responsive.scss';
 
 @tailwind base;
 @tailwind components;
@@ -35,6 +34,15 @@ $font-size-subtitle: 22px;
 html, body{
     height: 100%;
 }
+// Menu Mobile
+.nav-mobile{
+    display: none;
+    .humburguer-menu{
+        display: none
+    }
+}
+// Fim nave Mobile
+
 header{
     background-image: url("../assets/images/bg.jpg");
     min-height: 450px;
@@ -244,11 +252,14 @@ header{
         .container-service{
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
             padding: 0.5rem;
 
             h2{
                 color: $Dark-Teal-color;
                 font-size: $font-size-subtitle;
+                margin-top: 1rem;
             }
             p{
                 font-weight: $font-weight-text;
@@ -437,7 +448,7 @@ footer{
     }
     p{
         color: $Bluish-Gray;
-        font-size: $font-size-subtitle;
+        font-size: 15px;
         font-weight: 300;
         margin-top: 0.5rem;
     }
@@ -454,6 +465,62 @@ footer{
             border-radius: 40%;
             border: 1px solid #a8a4a4;
             margin-left: 0.5rem;
+        }
+    }
+}
+
+//Medias Queries
+@media (max-width: 968px) {
+
+    header{
+        .header-container{
+            .top-menu{
+                display: none;
+            }
+        }
+    }
+    .nav-mobile{
+        display: block;
+        background-color: $Dark-Teal-color;
+        text-align: center;
+        color: $default-white;
+
+        .humburguer-menu{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+    
+            div{
+                margin-right: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                i{
+                    color: $default-white;
+                }
+            }
+            .logo-Mobile{
+                background-image: url("../assets/images/logo.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 130px;
+                height: 20px;
+                margin: 1.5rem;
+                border: none;
+            }
+        }
+        ul{
+            padding: 1rem;
+
+            li{
+                margin: 1rem 0;
+                width: 100%;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 0.5rem;
+            }
         }
     }
 }
