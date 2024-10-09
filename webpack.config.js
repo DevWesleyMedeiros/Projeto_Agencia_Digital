@@ -9,6 +9,9 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
     },
+    resolve: {
+        extensions: ['.ts', '.js']
+      },
     module: {
         rules: [
             {
@@ -43,6 +46,11 @@ module.exports = {
                 generator: {
                     filename: 'images/[name][ext]'
                 }
+            },
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
             }
         ]
     },
