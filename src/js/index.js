@@ -2,17 +2,34 @@ import '../styles/style.scss';
 import '@fortawesome/fontawesome-free/js/all.js';
 import * as bootstrap from 'bootstrap';
 
-//Image mini-banner insertion into HTML
-import imageMockup1 from '../assets/images/mockup1.jpg'
+import imageMockup1 from '../assets/images/mockup1.jpg';
 let imgTag = document.querySelector(".mockup1");
 imgTag.src = `${imageMockup1}`;
 imgTag.alt = "Imagem mini-banner CTA";
 imgTag.style.maxWidth = "500px";
 
+const importImages = require.context('../assets/images', false, /\.jpg$/);
+const images = [];
 
+for (let i = 1; i <= 6; i++) {
+  images.push(importImages(`./img${i}.jpg`));
+}
+const imgsTag = [...document.querySelectorAll(".IMGtag")];
 
-
-
-$(document).ready(function () {
-    // Usado para criar efeitos
+imgsTag.forEach((Img, index) => {
+  Img.src = images[index]; 
+  Img.style.width = "100%"; 
 });
+
+import Bianchini from '../assets/images/bianchini.png';
+import Rancho from '../assets/images/rancho.png';
+import Hoepcke from '../assets/images/hoepcke.png';
+import Monguillhot from '../assets/images/monguilhott.png';
+
+const arrayLogoParceiros = [Bianchini, Rancho, Hoepcke, Monguillhot];
+const logosEmpresasParceiras = [...document.querySelectorAll(".logo-empresas-clientes")];
+
+for (let i = 0; i < arrayLogoParceiros.length; i++) {
+    logosEmpresasParceiras[i].src = arrayLogoParceiros[i];
+    
+}

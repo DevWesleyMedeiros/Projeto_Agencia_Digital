@@ -275,4 +275,36 @@ header{
         }
     }
 }
+.portifolio{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .portifolio-title{
+        margin-bottom: 3rem;
+
+        h2{
+            color: $Dark-Teal-color;
+            font-size: 22px;
+        }
+    }
+    .logos-companies{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .company-single{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            width: 25%;
+            margin: 0 4rem;
+        }
+    }
+
+
+
+}
             
