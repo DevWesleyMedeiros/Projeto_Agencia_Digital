@@ -56,13 +56,14 @@ html, body{
 
 header{
     background-image: url("../assets/images/bg.jpg");
-    min-height: 450px;
+    min-height: 550px;
     background-size: cover;
     background-position: center;
 
     .header-container{
         display:flex;
         flex-direction: column;
+        padding: 0.5rem;
 
         .top-menu{
             width: 100%;
@@ -103,7 +104,7 @@ header{
             }
         }
         .form-banner{
-            max-width: 600px;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -121,10 +122,12 @@ header{
             }
             .form{
                 margin-top: 0.5rem;
-                max-width: 420px;
+                max-width: 450px;
 
                 form{
+                    width: 100%;
                     display: flex;
+                    justify-content: space-between;
 
                     .button {
                         width: 200px;
@@ -139,7 +142,7 @@ header{
                         font-weight: 600;
                         transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
                         overflow: hidden;
-                        margin-left: 1rem;
+                        // margin-left: 1rem;
                     }
                     
                     .button::before {
@@ -218,13 +221,14 @@ header{
         justify-content: flex-end;
         align-items: flex-end;
         max-width: 960px;
+        width: 100%;
         min-height: 350px;
         background-image: url("../assets/images/bg2.jpg");
         margin-top: 4rem;
         background-size: cover;
 
         .banner{
-            width: 50%;
+            max-width: 300px;
             padding: 20px;
             background-color: $default-white;
 
@@ -263,9 +267,10 @@ header{
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 1rem;
         grid-row-gap: 1rem;
-        padding: 5rem;
+        padding: 5%;
 
         .container-service{
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -361,24 +366,9 @@ header{
             #3a2c09);
             border-radius: 2.5em;
             padding: 30px;
-            max-width: 500px;
+            max-width: 600px;
             width: 100%;
-            height: auto;
         }
-        
-        .form::before {
-            content: '';
-            background-image: linear-gradient(45deg, #ff0000, 
-            #ffb700);
-            height: 358px;
-            width: 309px;
-            position: absolute;
-            margin-top: -34px;
-            margin-left: px;
-            z-index: -1;
-            border-radius: 2.7em;
-        }
-        
         .button {
             margin-top: 10px;
             font-family: Arial, Helvetica, sans-serif;
@@ -458,14 +448,17 @@ header{
 }
 footer{
     margin-top: 5rem;
-    min-height: 200px;
+    min-height: 130px;
+    display: flex;
+    padding-top: 0.5rem;
+    background-color: $Bluish-Gray;
 
     h2{
         font-size: $font-size-subtitle;
         color: $Dark-Teal-color;
     }
     p{
-        color: $Bluish-Gray;
+        color: $Dark-Teal-color;
         font-size: 15px;
         font-weight: 300;
         margin-top: 0.5rem;
@@ -473,6 +466,7 @@ footer{
     form{
         display: flex;
         flex-wrap: nowrap;
+        margin-bottom: 1rem;
 
         .icon{
             display: flex;
@@ -483,6 +477,13 @@ footer{
             border-radius: 40%;
             border: 1px solid #a8a4a4;
             margin-left: 0.5rem;
+        }
+        .icon{
+            transition: all 0.5s ease;
+        }
+        .icon:hover{
+            background-color: $default-white;
+            transform: scale(1.2);
         }
     }
 }
@@ -557,6 +558,7 @@ footer{
     .container-testimonial{
         justify-content: center !important;
         align-items: center !important;
+        padding: 1rem 0;
 
         .banner{
             width: 100%;
@@ -566,7 +568,8 @@ footer{
         width: 100%;
     }
     .container-our-service{
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(1, 6fr) !important;
+        padding: 0 0.5rem;
 
         .container-service{
             margin: 0.5rem 0;
@@ -584,7 +587,8 @@ footer{
         }
     }
     .contact-form{
-        align-items: flex-start;
+        align-items: center;
+        padding: 1rem;
 
         .form {
             width: 100%;
@@ -594,4 +598,64 @@ footer{
 footer{
     width: 100%;
     text-align: center;
+}
+@media (max-width: 450px){
+    header{
+        background-position: top center;
+        min-height: 570px;
+    }
+    .form-banner{
+        h2{
+            font: 2em;
+        }
+        form{
+            display: flex;
+            flex-wrap: wrap;
+            
+            .button {
+                margin-top: 1rem;
+            }
+        }
+    }
+    .container-description{
+        margin: 1rem;
+
+        p{
+            width: 100%;
+        }
+    }
+    .container{
+        padding: 0 1rem;
+        .our-job{
+            width: 100%;
+
+            h3{
+                margin-left: 0;
+            }
+        }
+        .img-CTA{
+            max-width: 350px;
+        }
+    }
+    footer{
+        width: 100%;
+        .footer-main-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form{
+            flex-wrap: wrap;
+    
+            .icon{
+                margin-top: 0.5rem;
+                margin-left: 0rem;
+            }
+        }
+        .row{
+            .footer-container{
+                margin-top: 0.5rem;
+            }
+        }
+    }
 }
