@@ -33,10 +33,10 @@ const logosEmpresasParceiras = [...document.querySelectorAll(".logo-empresas-cli
 for (let i = 0; i < arrayLogoParceiros.length; i++) {
     logosEmpresasParceiras[i].src = arrayLogoParceiros[i];
 }
-//Script Menu Toggle
+
 document.addEventListener("DOMContentLoaded", () => {
-    $('.nav-mobile > .Humburguer_icon').click(function(e) {
-        e.preventDefault();
+    $('.Humburguer_icon').click(function(e) {
+        e.stopPropagation();
         $('.nav-mobile').parent().find('ul').toggle(1000); 
     });
 });
